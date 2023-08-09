@@ -45,6 +45,30 @@ function renderCartDropOffPersonalisationCampaign(data) {
   const productNameEl = containerEl.getElementById('product-name')
   productNameEl.innerText = product 
 }
+event = {
+  "detail": {
+    "kv": {
+          "topic": "Cart drop-off",
+		  "Name": "Alice", 
+		  "Cart": "Roadster Jacket",
+	  	},
+    msgId: "1649748667_20220412",
+    wzrk_pivot: "wzrk_default" 
+  }
+}
+document.addEventListener("CT_web_native_display", function(event) {
+    console.log(event);
+});
+document.addEventListener("CT_web_native_display", function(event) {
+  const data = event.detail;
+	const topic = data.kv.topic;
+	switch (topic) {
+		case "Cart drop-off": {
+			renderCartDropOffPersonalisationCampaign(data)
+			break;
+   	}
+  }
+});
 </script>
 <title>Sample Web Page</title>
 <style>
