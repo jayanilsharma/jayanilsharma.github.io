@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript">
     var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
-// replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
 clevertap.account.push({"id": "ZWW-WWW-WWRZ"});
 clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
 clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
@@ -33,6 +32,7 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
    "MSG-whatsapp": true,              // Enable WhatsApp notifications
  }
 })
+clevertap.getAllInboxMessages()
 function raiseEvent() {
     clevertap.event.push("Product Viewed");
 }
@@ -96,6 +96,9 @@ function renderCartDropOffPersonalisationCampaign(data) {
     border: none;
     cursor: pointer;
   }
+  ct-web-inbox {
+  font-family: monospace;
+}
 </style>
 </head>
 <body>
