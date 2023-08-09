@@ -36,8 +36,17 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
 function raiseEvent() {
     clevertap.event.push("Product Viewed");
 }
+function renderCartDropOffPersonalisationCampaign(data) {
+	const name = data.kv.Name;
+  const product = data.kv.Cart;
+  const containerEl = document.getElementById('container')
+  const userNameEl = containerEl.getElementById('user-name')
+  usernameEl.innerText = name
+  const productNameEl = containerEl.getElementById('product-name')
+  productNameEl.innerText = product 
+}
 </script>
-<title>Simple Web Page</title>
+<title>Sample Web Page</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -62,6 +71,18 @@ function raiseEvent() {
 </style>
 </head>
 <body>
+
+    <div id="container">
+        <div class="close">&times;</div>
+      <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
+      <div class="message">
+          Hello <span id="user-name">user</span>,
+           <p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
+        <p>We get it - it's fabulous.</p>
+           <p>Use SALE20 and avail 20% off</p>
+        <p>What are you waiting for??</p>
+      </div>
+    </div>
 
 <div class="container">
   <button class="button" onclick="raiseEvent()">Click Me</button>
