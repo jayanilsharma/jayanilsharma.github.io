@@ -1,0 +1,29 @@
+{
+    "d": [
+      {
+        "identity": "1189549",       
+        "type": "profile",
+        "profileData": {
+          "Name": "Jack Montana",
+          "Email": "jack@gmail.com",
+          "Phone": "+14155551234",
+          "Gender": "M",
+          "MSG-sms": false,
+          "MSG-email":true,
+          "MSG-whatsapp": true,
+          "MSG-dndPhone": true, 
+          "MSG-dndEmail": true,
+          "category-unsubscribe": {
+              "email": ["Newsletters", "Promotions"]
+          },
+          "category-resubscribe": {
+              "email": ["Football", "Movies"]
+          },
+          "DOB": "$D_1487576752",
+         "Customer Type": "Platinum",
+          "Custom Multi Value":{"$remove":["shoes","bags"]},
+          "My Number 1": {"$incr" : 10}
+        }
+      }
+    ]
+  }
