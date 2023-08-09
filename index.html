@@ -36,15 +36,6 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
 function raiseEvent() {
     clevertap.event.push("Product Viewed");
 }
-function renderCartDropOffPersonalisationCampaign(data) {
-	const name = data.kv.Name;
-  const product = data.kv.Cart;
-  const containerEl = document.getElementById('container')
-  const userNameEl = containerEl.getElementById('user-name')
-  usernameEl.innerText = name
-  const productNameEl = containerEl.getElementById('product-name')
-  productNameEl.innerText = product 
-}
 event = {
   "detail": {
     "kv": {
@@ -69,6 +60,19 @@ document.addEventListener("CT_web_native_display", function(event) {
    	}
   }
 });
+function renderCartDropOffPersonalisationCampaign(data) {
+	const name = data.kv.Name;
+  const product = data.kv.Cart;
+  const containerEl = document.getElementById('container')
+  const userNameEl = containerEl.getElementById('user-name')
+  usernameEl.innerText = name
+  const productNameEl = containerEl.getElementById('product-name')
+  productNameEl.innerText = product 
+  clevertap.renderNotificationViewed(data);
+  containerEl.addEventListener('click', () => {
+  	clevertap.renderNotificationClicked(data)
+  });
+}
 </script>
 <title>Sample Web Page</title>
 <style>
