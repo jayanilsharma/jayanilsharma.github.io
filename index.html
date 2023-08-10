@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sample Web Page</title>
 <script type="text/javascript">
-    var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
-clevertap.account.push({"id": "R99-655-Z96Z"});
+    var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], region: 'sk1-staging-26', privacy:[]};
+clevertap.account.push({"id": "WRK-485-456Z"});
 clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
 clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
 (function () {
@@ -33,7 +33,6 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
    "MSG-whatsapp": true,              // Enable WhatsApp notifications
  }
 })
-clevertap.getAllInboxMessages()
 function raiseEvent() {
     clevertap.event.push("Product Viewed");
 }
@@ -109,12 +108,6 @@ function renderCartDropOffPersonalisationCampaign(data) {
 
 <body>
 
-    <input type="button" onclick="sendEvent()" value="Fire event"/>
-<script>
-    function sendEvent() {
-        clevertap.event.push("<can add system events or custom events here>")
-    }
-</script>
 <scripts src="clevertap_sw.js"></scripts>
 
     <script type="module">
@@ -152,6 +145,13 @@ function renderCartDropOffPersonalisationCampaign(data) {
         <p>What are you waiting for??</p>
       </div>
     </div>
+
+    <input type="button" onclick="sendEvent()" value="Fire event"/>
+<script>
+    function sendEvent() {
+        clevertap.event.push("<can add system events or custom events here>")
+    }
+</script>
 
 <div class="container">
   <button class="button" onclick="raiseEvent()">Click Me</button>
