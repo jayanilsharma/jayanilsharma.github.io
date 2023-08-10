@@ -110,30 +110,7 @@ function renderCartDropOffPersonalisationCampaign(data) {
 
 <scripts src="clevertap_sw.js"></scripts>
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyBLaVNiHTWasaqszHUGLR48cco51rtH_m4",
-          authDomain: "test-demo-32a00.firebaseapp.com",
-          projectId: "test-demo-32a00",
-          storageBucket: "test-demo-32a00.appspot.com",
-          messagingSenderId: "772116407351",
-          appId: "1:772116407351:web:c72850cc08b5841bd4cbb2",
-          measurementId: "G-5P52GQ6SSV"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
-
+   
     <div id="container">
         <div class="close">&times;</div>
       <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
@@ -145,13 +122,6 @@ function renderCartDropOffPersonalisationCampaign(data) {
         <p>What are you waiting for??</p>
       </div>
     </div>
-
-    <input type="button" onclick="sendEvent()" value="Fire event"/>
-<script>
-    function sendEvent() {
-        clevertap.event.push("<can add system events or custom events here>")
-    }
-</script>
 
 <div class="container">
   <button class="button" onclick="raiseEvent()">Click Me</button>
