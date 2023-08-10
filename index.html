@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Web Page</title>
 <script type="text/javascript">
     var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
-clevertap.account.push({"id": "TEST-R78-554-K65Z"});
+clevertap.account.push({"id": "R99-655-Z96Z"});
 clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
 clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
 (function () {
@@ -73,13 +74,9 @@ function renderCartDropOffPersonalisationCampaign(data) {
   	clevertap.renderNotificationClicked(data)
   });
 }
-importScripts('https://s3-eu-west-1.amazonaws.com/static.wizrocket.com/js/sw_webpush.js');
 </script>
 
-
-<title>Sample Web Page</title>
-
-
+<link rel="manifest" href="/manifest.json"/>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -111,6 +108,14 @@ importScripts('https://s3-eu-west-1.amazonaws.com/static.wizrocket.com/js/sw_web
 
 
 <body>
+
+    <input type="button" onclick="sendEvent()" value="Fire event"/>
+<script>
+    function sendEvent() {
+        clevertap.event.push("<can add system events or custom events here>")
+    }
+</script>
+<scripts src="clevertap_sw.js"></scripts>
 
     <script type="module">
         // Import the functions you need from the SDKs you need
