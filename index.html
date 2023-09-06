@@ -39,7 +39,7 @@ function raiseEvent() {
 function raiseEventForPush() {
   clevertap.event.push("Charged");
 }
-function raiseEventforWebPopup() {
+function raiseEventforNativeDisplay() {
   clevertap.event.push("Product Viewed");
 }
 event = {
@@ -128,11 +128,13 @@ function sendWebInbox() {
 
 <img id="inbox" src="https://img.icons8.com/emoji/48/000000/bell-emoji.png" onclick="sendWebInbox()">
 
+<div id="carousel-container"></div>
+
 <div class="container">
   <button class="button" onclick="raiseEventForPush()">Try Web Push</button>
 </div>
 <div class="container">
-  <button class="button" onclick="raiseEventforWebPopup()">Try Web Popup</button>
+  <button class="button" onclick="raiseEventforNativeDisplay()">Try Native Display</button>
 </div>
 
     <div id="container">
