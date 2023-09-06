@@ -36,6 +36,12 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
 function raiseEvent() {
     clevertap.event.push("Product Viewed");
 }
+function raiseEventForPush() {
+  clevertap.event.push("Charged");
+}
+function raiseEventforWebPopup() {
+  clevertap.event.push("App Launched")
+}
 event = {
   "detail": {
     "kv": {
@@ -121,6 +127,14 @@ function sendWebInbox() {
 <scripts src="clevertap_sw.js"></scripts>
 
 <img id="inbox" src="https://img.icons8.com/emoji/48/000000/bell-emoji.png" onclick="sendWebInbox()">
+
+<div class="container">
+  <button class="button" onclick="raiseEventForPush()">Try Web Push</button>
+</div>
+<div class="container">
+  <button class="button" onclick="raiseEventforWebPopup()">Try Web Popup</button>
+</div>
+
     <div id="container">
         <div class="close">&times;</div>
       <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
@@ -136,6 +150,5 @@ function sendWebInbox() {
 <div class="container">
   <button class="button" onclick="raiseEvent()">Raise Event</button>
 </div>
-
 </body>
 </html>
