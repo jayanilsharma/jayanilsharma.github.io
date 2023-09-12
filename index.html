@@ -34,13 +34,13 @@ clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agre
  }
 })
 var accID = "K99-655-Z96Z";
-function raiseEvent() {
-    clevertap.event.push("Product Viewed");
-}
+// function raiseEvent() {
+//     clevertap.event.push("Product Viewed");
+// }
 function raiseEventForPush() {
   clevertap.event.push("Charged");
 }
-function raiseEventforNativeDisplay() {
+function raiseEventforWebInbox() {
   clevertap.event.push("Product Viewed");
 }
 event = {
@@ -137,7 +137,7 @@ function sendWebInbox() {
   <button class="button" onclick="raiseEventForPush()">Try Web Push</button>
 </div>
 <div class="container">
-  <button class="button" onclick="raiseEventforNativeDisplay()">Try Native Display</button>
+  <button class="button" onclick="raiseEventforWebInbox()">Try Web Inbox</button>
 </div>
 
     <div id="container">
@@ -152,8 +152,6 @@ function sendWebInbox() {
       </div>
     </div>
 
-<div class="container">
-  <button class="button" onclick="raiseEvent()">Raise Event</button>
-</div>
+
 </body>
 </html>
