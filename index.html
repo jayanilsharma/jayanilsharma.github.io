@@ -41,7 +41,11 @@ function raiseEventForPush() {
   clevertap.event.push("Charged");
 }
 function raiseEventforWebInbox() {
-  clevertap.event.push("Product Viewed");
+  clevertap.event.push('Feature Button Clicked', {
+    'Channel Name': 'Web Inbox'
+    // 'Guest User': localStorage.getItem('user_name') ? true : false
+  })
+  // clevertap.event.push("Product Viewed");
 }
 event = {
   "detail": {
